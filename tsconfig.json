@@ -1,0 +1,14 @@
+{
+  "extends": "expo/tsconfig.base",
+  "target": "es6",
+  "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "strict": true,
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types/",
+      "./declarations/navigation.d.ts"
+    ]
+  }
+}

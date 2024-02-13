@@ -1,0 +1,3 @@
+enum EItemType {
+  TEXT = "text",
+}
