@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { ContextStore } from "../../components/StoreProvider/StoreProvider";
 import TextField from "../../components/TextField";
-import { commonStyles } from "../../theme";
+import { commonColors, commonStyles } from "../../theme";
 import Select from "../../components/Select";
 import { ELanguage } from "../../enums";
 import LocalizedProperty from "../../components/LocalizedProperty";
@@ -36,11 +36,20 @@ const ConverterPage = () => {
 
   return (
     <View style={commonStyles.commonWrapper}>
-      <Text>
+      <Text style={[commonColors.primary, commonStyles.h2]}>
         <LocalizedProperty propertyName="converter" />
       </Text>
-      <TextField value={kg} onChange={kgChanged} placeholder="kg" />
-      <TextField value={lb} onChange={lbChanged} placeholder="lb" />
+      <View
+        style={{
+          borderWidth: 1,
+          borderColor: commonColors.primary.color,
+          borderRadius: 10,
+          padding: 20,
+        }}
+      >
+        <TextField value={kg} onChange={kgChanged} placeholder="kg" />
+        <TextField value={lb} onChange={lbChanged} placeholder="lb" />
+      </View>
       <Select value={language} items={LANGUAGES} onValueChange={setLanguage} />
       <Text>{language}</Text>
     </View>

@@ -1,10 +1,16 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { commonStyles } from "../../../theme";
-import { TextProperty } from "../../../const";
+import { CommonTextProperty } from "../../../types/articleInterface";
 
-const ItemText = ({ value }: TextProperty) => (
-  <View style={[commonStyles.commonWrapper, commonStyles.marginBottom10]}>
+const ItemText = ({ value }: CommonTextProperty) => (
+  <View
+    style={[
+      commonStyles.articlePartWrapper,
+      commonStyles.marginBottom10,
+      { paddingTop: 0 },
+    ]}
+  >
     <Text style={commonStyles.p2}>{value}</Text>
   </View>
 );

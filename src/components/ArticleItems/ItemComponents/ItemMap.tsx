@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import MapView, { Marker } from "react-native-maps";
-import { MapProperty } from "../../../const";
+import React from "react";
+import MapView from "react-native-maps";
+import { MapProperty } from "../../../types/articleInterface";
 
-const ItemMap = ({ initialRegion, markers }: MapProperty) => {
+const ItemMap = ({ initialRegion }: MapProperty) => {
   return (
     <MapView style={{ height: 200 }} initialRegion={initialRegion}>
       {/*{markers.map((marker) => {*/}

@@ -44,6 +44,12 @@ export const commonStyles = StyleSheet.create({
   marginBottom10: {
     marginBottom: 10,
   },
+  marginBottom5: {
+    marginBottom: 5,
+  },
+  marginTop15: {
+    marginTop: 15,
+  },
   boxShadow: {
     shadowColor: "#171717",
     shadowOffset: { width: 0, height: 4 },
@@ -52,7 +58,10 @@ export const commonStyles = StyleSheet.create({
   },
   commonWrapper: {
     paddingHorizontal: 28,
-    paddingTop: 20,
+    backgroundColor: "#fff",
+  },
+  articlePartWrapper: {
+    paddingHorizontal: 28,
     backgroundColor: "#fff",
   },
   h1: {

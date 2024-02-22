@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { useRoute } from "@react-navigation/native";
-import { ARTICLES, ArticlesProperty } from "../../const";
+import { ARTICLES } from "../../articleSource/ARTICLES";
 import { RoutePropsProps } from "../../types/navigateTypes";
+import getItem from "../../components/ArticleItems/getItem";
+import { ArticlesProperty } from "../../types/articleInterface";
 import { EPage } from "../../enums";
 import { commonColors, commonStyles } from "../../theme";
-import getItem from "../../components/ArticleItems/getItem";
 
 const ArticleDescriptionPage = () => {
   const [state, setState] = useState<ArticlesProperty>(null);
@@ -22,13 +23,15 @@ const ArticleDescriptionPage = () => {
   return (
     <SafeAreaView style={{ height: "100%" }}>
       <ScrollView
-        style={[
-          commonStyles.commonWrapper,
-          { paddingHorizontal: 0, paddingTop: 0 },
-        ]}
+        style={[commonStyles.commonWrapper, { paddingHorizontal: 0 }]}
+        contentContainerStyle={{
+          paddingVertical: 20,
+        }}
       >
-        <View style={commonStyles.commonWrapper}>
-          <Text style={[commonStyles.h2, commonColors.primary]}>
+        <View
+          style={[commonStyles.articlePartWrapper, commonStyles.marginBottom20]}
+        >
+          <Text style={[commonStyles.h1, commonColors.primary]}>
             {state.header}
           </Text>
         </View>

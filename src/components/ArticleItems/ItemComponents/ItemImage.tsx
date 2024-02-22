@@ -1,11 +1,11 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { ImageProperty } from "../../../const";
-import { commonColors } from "../../../theme";
+import { commonColors, commonStyles } from "../../../theme";
+import { ImageProperty } from "../../../types/articleInterface";
 
 const ItemImage = ({ comment, value }: ImageProperty) => {
   return (
-    <View style={{ marginBottom: 10 }}>
+    <View style={commonStyles.marginBottom10}>
       <Image
         source={value as any}
         style={{

@@ -5,7 +5,7 @@ import { useFonts } from "expo-font";
 import ArticleDescriptionPage from "../../pages/ArticleDescriptionPage";
 import BottomNavigator from "../BottomNavigator";
 import { RootStackParamList } from "../../types";
-import { fonts } from "../../theme";
+import { commonColors, fonts } from "../../theme";
 import { EPage } from "../../enums";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -31,7 +31,10 @@ const Navigator = () => {
           name={EPage.ARTICLE_DESCRIPTION}
           component={ArticleDescriptionPage}
           options={{
-            headerShown: false,
+            title: null,
+            headerBackTitleVisible: false,
+            headerTitle: "Статья",
+            headerTintColor: commonColors.primary.color,
           }}
         />
       </Stack.Navigator>

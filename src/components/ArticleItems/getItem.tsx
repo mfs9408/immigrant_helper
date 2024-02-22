@@ -6,16 +6,24 @@ import {
   DataProperty,
   ImageProperty,
   MapProperty,
-  TextProperty,
-} from "../../const";
+  CommonTextProperty,
+  TitleValueTextProperty,
+} from "../../types/articleInterface";
+import ItemTextSubheader from "./ItemComponents/ItemTextSubheader";
+import ItemTitleValue from "./ItemComponents/ItemTitleValue";
+import { EItemType } from "../../enums";
 
 const GetItem = (item: DataProperty) => {
   switch (item.type) {
-    case "text":
-      return <ItemText {...(item as TextProperty)} />;
-    case "image":
+    case EItemType.TEXT:
+      return <ItemText {...(item as CommonTextProperty)} />;
+    case EItemType.TEXT_SUBHEADER:
+      return <ItemTextSubheader {...(item as CommonTextProperty)} />;
+    case EItemType.TEXT_TITLE_VALUE:
+      return <ItemTitleValue {...(item as TitleValueTextProperty)} />;
+    case EItemType.IMAGE:
       return <ItemImage {...(item as ImageProperty)} />;
-    case "map":
+    case EItemType.MAP:
       return <ItemMap {...(item as MapProperty)} />;
   }
 };
