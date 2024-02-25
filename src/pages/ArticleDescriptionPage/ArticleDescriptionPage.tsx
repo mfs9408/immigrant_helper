@@ -22,23 +22,26 @@ const ArticleDescriptionPage = () => {
 
   return (
     <SafeAreaView style={{ height: "100%" }}>
-      <ScrollView
-        style={[commonStyles.commonWrapper, { paddingHorizontal: 0 }]}
-        contentContainerStyle={{
-          paddingVertical: 20,
-        }}
-      >
-        <View
-          style={[commonStyles.articlePartWrapper, commonStyles.marginBottom20]}
+        <ScrollView
+          style={[commonStyles.commonWrapper, { paddingHorizontal: 0 }]}
+          contentContainerStyle={{
+            paddingVertical: 20,
+          }}
         >
-          <Text style={[commonStyles.h1, commonColors.primary]}>
-            {state.header}
-          </Text>
-        </View>
-        {state.data.map((item, key) => (
-          <View key={key}>{getItem(item)}</View>
-        ))}
-      </ScrollView>
+          <View
+            style={[
+              commonStyles.articlePartWrapper,
+              commonStyles.marginBottom20,
+            ]}
+          >
+            <Text style={[commonStyles.h1, commonColors.primary]}>
+              {state.header}
+            </Text>
+          </View>
+          {state.data.map((item, key) => (
+            <View key={key}>{getItem(item)}</View>
+          ))}
+        </ScrollView>
     </SafeAreaView>
   );
 };

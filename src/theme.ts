@@ -10,7 +10,9 @@ export const commonColors = StyleSheet.create({
   third: {
     color: "rgba(200,200,200, 0.9)",
   },
-
+  additionalColor: {
+    color: "#2D4A6F",
+  },
   background: {
     backgroundColor: "#fff",
   },

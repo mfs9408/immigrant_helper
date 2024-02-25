@@ -1,10 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
-import { Text, TextInput, ViewStyle } from "react-native";
-import { makeStyles } from "./styles";
-import { commonStyles } from "../../theme";
+import React, { useState } from "react";
+import { StyleSheet, Text, TextInput, ViewStyle } from "react-native";
+import { commonColors, commonStyles } from "../../theme";
 
 interface ITextFieldProps {
-  value: number;
+  value: string;
   onChange?: any;
   placeholder?: string;
   label?: string;
@@ -25,25 +24,28 @@ const TextField = ({
   onPress,
   label,
   multiline,
+  numeric,
   editable = true,
 }: ITextFieldProps) => {
-  const classes = makeStyles(error);
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <>
-      {label && <Text style={[commonStyles.p1, classes.label]}>{label}</Text>}
+      {label && <Text style={[commonStyles.p1, style.label]}>{label}</Text>}
       <TextInput
+        keyboardType={numeric ? "numeric" : undefined}
         placeholder={placeholder}
-        value={String(value) || "0"}
-        onChangeText={(e) => onChange(Number(e))}
+        value={value}
+        onChangeText={(e) => onChange(e)}
         onFocus={() => setIsFocused(!isFocused)}
         onBlur={() => setIsFocused(!isFocused)}
         editable={editable}
         onPressIn={onPress}
+        placeholderTextColor="#aaaaaa"
         style={[
-          classes.input,
-          isFocused && classes.isFocused,
+          commonStyles.h2,
+          style.input,
+          isFocused && style.isFocused,
           multiline && { paddingTop: 10.5, height: "auto" },
           !editable && { backgroundColor: "#ccc" },
           styles,
@@ -53,5 +55,28 @@ const TextField = ({
     </>
   );
 };
+
+const style = StyleSheet.create({
+  label: {
+    marginBottom: 10,
+  },
+  input: {
+    height: 40,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderBottomColor: "#fff",
+    borderBottomWidth: 1,
+    color: "#fff",
+    // borderColor: error
+    //   ? commonColors.error.color
+    //   : commonColors.lightPrimary.color,
+    // backgroundColor: "red",
+    width: 160,
+    // backgroundColor: "rgba(217, 214, 218, 0.20)",
+  },
+  isFocused: {
+    borderColor: commonColors.primary.color,
+  },
+});
 
 export default TextField;
