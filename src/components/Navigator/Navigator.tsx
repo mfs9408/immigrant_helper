@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import { RootStackParamList } from "../../types/navigateTypes";
 import ArticleDescriptionPage from "../../pages/ArticleDescriptionPage";
 import BottomNavigator from "../BottomNavigator";
-import { RootStackParamList } from "../../types";
 import { commonColors, fonts } from "../../theme";
 import { EPage } from "../../enums";
+import { ContextStore } from "../StoreProvider/StoreProvider";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigator = () => {
   const [fontsLoaded] = useFonts(fonts);
+  const { fetchData } = useContext(ContextStore);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   if (!fontsLoaded) {
     return null;

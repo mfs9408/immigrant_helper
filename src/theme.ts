@@ -25,6 +25,9 @@ export const commonColors = StyleSheet.create({
   error: {
     color: "#d32f2f",
   },
+  linkColor: {
+    color: "#0000EE",
+  },
 });
 
 export const commonStyles = StyleSheet.create({

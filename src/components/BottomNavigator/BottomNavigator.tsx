@@ -4,8 +4,9 @@ import { MaterialIcons } from "@expo/vector-icons";
 import ConverterPage from "../../pages/ConverterPage";
 import { EPage } from "../../enums";
 import ArticlesPage from "../../pages/ArticlesPage";
-import { commonColors, commonStyles } from "../../theme";
+import { commonColors } from "../../theme";
 import { commonTabScreenProperties } from "./const";
+import ExamplePage from "../../pages/ExamplePage";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,6 +43,7 @@ const BottomNavigator = () => {
           ),
         }}
       />
+      <Tab.Screen name="example" component={ExamplePage} />
     </Tab.Navigator>
   );
 };

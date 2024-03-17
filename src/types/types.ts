@@ -1,5 +1,17 @@
 import { EItemType } from "../enums";
 
+export interface CommonDataProperties {
+  articles: ArticlesProperty[];
+  converters: ConverterTypes[];
+}
+
+export interface ConverterTypes {
+  coefficient: number;
+  firstText: string;
+  secondText: string;
+  comparison: string;
+}
+
 export type ArticlesProperty = {
   id: string;
   image: any;
@@ -16,6 +28,7 @@ export type DataProperty =
 
 export interface TitleValueTextProperty extends CommonTextProperty {
   title: string;
+  url?: string;
 }
 
 export interface CommonTextProperty {
@@ -32,7 +45,15 @@ export interface ImageProperty {
 
 export interface MapProperty {
   type: EItemType;
-  markers: [];
+  markers: {
+    name: string;
+    address: string;
+    img: any;
+    coordinate: {
+      latitude: number;
+      longitude: number;
+    };
+  }[];
   initialRegion: {
     latitude: number;
     longitude: number;
@@ -40,3 +61,5 @@ export interface MapProperty {
     longitudeDelta: number;
   };
 }
+
+export type AllowedLocale = "ru" | "en";

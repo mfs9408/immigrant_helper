@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextField from "../TextField";
 import { commonColors, commonStyles } from "../../theme";
-import { ConverterTypes } from "../../types";
+import { ConverterTypes } from "../../types/types";
 
 const Converter = ({
   coefficient,
