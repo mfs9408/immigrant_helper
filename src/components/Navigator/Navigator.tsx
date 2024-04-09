@@ -13,11 +13,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigator = () => {
   const [fontsLoaded] = useFonts(fonts);
-  const { fetchData } = useContext(ContextStore);
+  // const { fetchData } = useContext(ContextStore);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   if (!fontsLoaded) {
     return null;

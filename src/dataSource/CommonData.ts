@@ -17,7 +17,7 @@ export const ARTICLES: ArticlesProperty[] = [
   insurance,
 ];
 
-const CONVERTERS: ConverterTypes[] = [
+export const CONVERTERS: ConverterTypes[] = [
   {
     coefficient: 2.205,
     firstText: "Kg",
@@ -37,8 +37,3 @@ const CONVERTERS: ConverterTypes[] = [
     comparison: "1 mile ~ 1.6 km",
   },
 ];
-
-export const DEFAULT_DATA: CommonDataProperties = {
-  articles: ARTICLES,
-  converters: CONVERTERS,
-};

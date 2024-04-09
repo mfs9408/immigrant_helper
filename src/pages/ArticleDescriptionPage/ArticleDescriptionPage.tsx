@@ -9,13 +9,13 @@ import { ArticlesProperty } from "../../types/types";
 import { EPage } from "../../enums";
 
 const ArticleDescriptionPage = () => {
-  const { data } = useContext(ContextStore);
+  const { articles } = useContext(ContextStore);
   const [state, setState] = useState<ArticlesProperty>(null);
   const route = useRoute<RoutePropsProps<EPage.ARTICLE_DESCRIPTION>>();
   const id = route.params.id;
 
   useEffect(() => {
-    const article = data.articles.find((item) => item.id === id);
+    const article = articles.find((item) => item.id === id);
     setState(article);
   }, []);
 

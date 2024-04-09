@@ -6,7 +6,6 @@ import { EPage } from "../../enums";
 import ArticlesPage from "../../pages/ArticlesPage";
 import { commonColors } from "../../theme";
 import { commonTabScreenProperties } from "./const";
-import ExamplePage from "../../pages/ExamplePage";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +42,6 @@ const BottomNavigator = () => {
           ),
         }}
       />
-      <Tab.Screen name="example" component={ExamplePage} />
     </Tab.Navigator>
   );
 };

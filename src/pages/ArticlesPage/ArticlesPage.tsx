@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { SafeAreaView, ScrollView } from "react-native";
+import { ContextStore } from "../../components/StoreProvider/StoreProvider";
+import ArticleCard from "../../components/ArticleCard";
 import Skeleton from "../../components/Skeleton";
 import { commonStyles } from "../../theme";
-import ArticleCard from "../../components/ArticleCard";
-import { ContextStore } from "../../components/StoreProvider/StoreProvider";
 
 const ArticlesPage = () => {
-  const { isLoading, data } = useContext(ContextStore);
+  const { isLoading, articles } = useContext(ContextStore);
 
   if (isLoading) return <Skeleton />;
 
@@ -18,7 +18,7 @@ const ArticlesPage = () => {
           paddingBottom: 20,
         }}
       >
-        {data.articles.map((item) => (
+        {articles.map((item) => (
           <ArticleCard key={item.id} {...item} />
         ))}
       </ScrollView>

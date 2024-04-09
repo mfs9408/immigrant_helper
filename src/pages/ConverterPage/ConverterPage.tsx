@@ -6,7 +6,7 @@ import Converter from "../../components/Converter";
 import Skeleton from "../../components/Skeleton";
 
 const ConverterPage = () => {
-  const { isLoading, data } = useContext(ContextStore);
+  const { isLoading, converterData } = useContext(ContextStore);
 
   if (isLoading) return <Skeleton />;
 
@@ -17,7 +17,7 @@ const ConverterPage = () => {
           { height: "100%", paddingVertical: 20, backgroundColor: "#fff" },
         ]}
       >
-        {data.converters.map((item, key) => (
+        {converterData.map((item, key) => (
           <Converter key={key} {...item} />
         ))}
       </ScrollView>

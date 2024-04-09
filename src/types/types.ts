@@ -26,25 +26,26 @@ export type DataProperty =
   | MapProperty
   | TitleValueTextProperty;
 
+type BaseItemProperty = {
+  type: EItemType;
+};
+
 export interface TitleValueTextProperty extends CommonTextProperty {
   title: string;
   url?: string;
 }
 
-export interface CommonTextProperty {
-  type: EItemType;
+export interface CommonTextProperty extends BaseItemProperty {
   value: string;
   additional?: unknown;
 }
 
-export interface ImageProperty {
-  type: EItemType;
+export interface ImageProperty extends BaseItemProperty {
   value?: any;
   comment?: string;
 }
 
-export interface MapProperty {
-  type: EItemType;
+export interface MapProperty extends BaseItemProperty {
   markers: {
     name: string;
     address: string;
